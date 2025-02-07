@@ -23,8 +23,8 @@ This tool is a YouTube video downloader API built using Flask and a web extensio
 
 1. 📂 Clone the repository:
    ```bash
-   git clone https://github.com/your-repo/youtube-downloader.git
-   cd youtube-downloader
+     https://github.com/rajchaudar/YutubeVideoDownloaderExe.git
+     cd YutubeVideoDownloaderExe
    ```
 2. 📦 Install dependencies:
    ```bash
@@ -32,7 +32,7 @@ This tool is a YouTube video downloader API built using Flask and a web extensio
    ```
 3. ▶️ Run the Flask API:
    ```bash
-   python app.py
+   python application.py
    ```
    The API will start on `http://127.0.0.1:5000/`
 
