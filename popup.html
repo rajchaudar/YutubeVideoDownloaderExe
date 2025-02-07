@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Downloader</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #f3f4f6, #e2e8f0);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 300px;
+            /* Adjust height for the popup */
+            margin: 0;
+            color: #333;
+            perspective: 1200px;
+            /* Increased for more dramatic 3D effect */
+            width: 300px;
+            /* Adjust width for the popup */
+            overflow: hidden;
+            /* Hide scrollbars for a cleaner look */
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transform: translateZ(0);
+            transition: transform 0.4s ease-out;
+            /* Smoother transition */
+            transform-style: preserve-3d;
+            /* Key for child elements to respect 3D transforms */
+        }
+
+        .container:hover {
+            transform: translateY(-15px) rotateX(10deg);
+            /* More pronounced tilt */
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
+            /* Enhanced shadow */
+        }
+
+        h1 {
+            font-size: 1.5em;
+            /* Adjust font size */
+            margin-bottom: 20px;
+            text-align: center;
+            color: #1a202c;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            /* Subtle text shadow */
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: border-color 0.3s, box-shadow 0.3s;
+            transform: translateZ(20px);
+            /* Slightly raised input fields */
+        }
+
+        input:focus,
+        select:focus {
+            outline: none;
+            border-color: #6a11cb;
+            box-shadow: 0 0 5px rgba(106, 17, 203, 0.5);
+        }
+
+        button {
+            padding: 8px 15px;
+            background-color: #6a11cb;
+            border: none;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 1em;
+            /* Adjust font size */
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            margin-top: 10px;
+            width: 100%;
+            transform: translateZ(30px);
+            /* More pronounced raise for the button */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            /* Deeper button shadow */
+        }
+
+        button:hover {
+            background-color: #2575fc;
+            transform: translateY(-5px) translateZ(30px);
+            /* Combined translation */
+        }
+
+
+        /* Add a subtle background animation */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #f3f4f6, #e2e8f0);
+            z-index: -1;
+            animation: backgroundShift 10s linear infinite;
+        }
+
+        @keyframes backgroundShift {
+            0% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: 100% 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>YouTube Downloader</h1>
+        <label for="video-url">Video URL:</label>
+        <input type="text" id="video-url" placeholder="Enter YouTube Video URL">
+
+        <label for="resolution">Resolution:</label>
+        <select id="resolution">
+            <option value="2160">2160p (4K)</option>
+            <option value="1440">1440p</option>
+            <option value="1080">1080p</option>
+            <option value="720">720p</option>
+            <option value="480">480p</option>
+            <option value="360">360p</option>
+        </select>
+
+        <button id="download-btn">Download</button>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+
+</html>
