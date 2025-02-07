@@ -76,6 +76,36 @@ This tool is a YouTube video downloader API built using Flask and a web extensio
 - 🚫 Some videos may have restrictions that prevent downloading.
 - 🔄 The API must be running for the browser extension to work.
 
+## Installation for Different Operating Systems
+
+### macOS
+
+1. Install Homebrew if not installed:
+   ```bash
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   ```
+2. Install `yt-dlp` and `ffmpeg`:
+   ```bash
+   brew install yt-dlp ffmpeg
+   ```
+
+### Windows
+
+1. Download `yt-dlp.exe` from [yt-dlp GitHub](https://github.com/yt-dlp/yt-dlp/releases) and place it in a known directory.
+2. Install `ffmpeg`:
+   - Download `ffmpeg` from [ffmpeg.org](https://ffmpeg.org/download.html) and add it to the system PATH.
+
+### Linux
+
+1. Install `yt-dlp` and `ffmpeg` using package managers:
+   ```bash
+   sudo apt update && sudo apt install yt-dlp ffmpeg
+   ```
+   or for Arch Linux:
+   ```bash
+   sudo pacman -S yt-dlp ffmpeg
+   ```
+
 ## License
 
 This project is open-source and available under the MIT License.
